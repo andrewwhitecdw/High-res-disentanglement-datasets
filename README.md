@@ -6,7 +6,7 @@ image resolution, photorealism, and richness of style factors,
 as compared to existing disentanglement datasets.
 
 
-## Falor3D
+## Falcor3D
 The Falcor3D dataset consists of `233,280` images based on the 3D scene of a living room, 
 where each image has a resolution of `1024x1024`. The 
 meta code corresponds to all possible combinations of `7` factors of variation:
@@ -33,7 +33,7 @@ padded_index = index padded with zeros such that it has 6 digits.
 To see the Falcor3D images by varying each factor of variation individually, 
 you can run 
 ```bash
-python dataset_demo.py --dataset Falor3D
+python dataset_demo.py --dataset Falcor3D
 ```
 and the results are saved in the `examples/falcor3d_samples` folder.
 
@@ -49,10 +49,10 @@ meta code corresponds to all possible combinations of `9` factors of variation:
 
 
 * object_shape (3)
-* object_scale (4)
-* camera_height (4)
 * robot_x-movement (8)
 * robot_y-movement (5)
+* camera_height (4)
+* object_scale (4)
 * lighting_intensity (4)
 * lighting_y-dir (6)
 * object_color (4)
@@ -66,7 +66,7 @@ Each image has as filename `padded_index.png` where
 ```
 index = object_shape * 245760 + object_scale * 30720 + camera_height * 6144 + 
 robot_x-movement * 1536 + robot_y-movement * 384 + lighting_intensity * 96 + 
-lighting_y-dir * 16 + object_color * 4 + wall color
+lighting_y-dir * 16 + object_color * 4 + wall_color
 ```
 padded_index = index padded with zeros such that it has 6 digits.
 
