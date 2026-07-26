@@ -39,12 +39,14 @@ def main(args):
         factor_sizes = [5, 6, 6, 6, 6, 6, 6]
         factor_names = ['lighting_intensity', 'lighting_x-dir', 'lighting_y-dir', 'lighting_z-dir',
                         'camera_x-pos', 'camera_y-pos', 'camera_z-pos']
-    else:
+    elif args.dataset == 'Isaac3D':
         image_dir = 'Isaac3D/images'
         target_dir = os.path.join(args.dest_folder, 'isaac3d_samples')
         factor_sizes = [3, 8, 5, 4, 4, 4, 6, 4, 4]
         factor_names = ['object_shape', 'robot_x-move', 'robot_y-move', 'camera_height', 'object_scale',
                         'lighting_intensity', 'lighting_y-dir', 'object_color', 'wall_color']
+    else:
+        raise ValueError("dataset must be 'Falcor3D' or 'Isaac3D'")
 
     image_files = sorted(glob.glob(os.path.join(image_dir, '*.png')))
     os.makedirs(target_dir, exist_ok=True)
