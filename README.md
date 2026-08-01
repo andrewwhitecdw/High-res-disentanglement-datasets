@@ -64,8 +64,8 @@ uniformly sampled in the normalized range of variations [0, 1].
 
 Each image has as filename `padded_index.png` where
 ```
-index = object_shape * 245760 + object_scale * 30720 + camera_height * 6144 + 
-robot_x-movement * 1536 + robot_y-movement * 384 + lighting_intensity * 96 + 
+index = object_shape * 245760 + robot_x-movement * 30720 + robot_y-movement * 6144 + 
+camera_height * 1536 + object_scale * 384 + lighting_intensity * 96 + 
 lighting_y-dir * 16 + object_color * 4 + wall_color
 ```
 padded_index = index padded with zeros such that it has 6 digits.
